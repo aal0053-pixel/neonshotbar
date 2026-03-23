@@ -13,3 +13,11 @@ body {
     margin: 0;
 }
 
+/* Typography */
+.font-display {
+    font-family: 'Anton', sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
