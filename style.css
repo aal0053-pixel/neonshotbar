@@ -1,0 +1,15 @@
+/* Custom Variables */
+:root {
+    --neon-green: #00ff00;
+    --bg-dark: #050505;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
