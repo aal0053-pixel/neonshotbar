@@ -138,3 +138,32 @@
             </div>
         </div>
     </section>
+    
+
+<!-- Modal -->
+<div id="reservationModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center">
+    <div class="bg-zinc-900 p-10 rounded-3xl neon-border">
+        <h2 class="text-3xl font-display">Reserve</h2>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="py-20 text-center border-t border-white/10">
+    <p>© Hassan Restaubar</p>
+</footer>
+
+<script>
+    lucide.createIcons();
+
+    function openModal(type) {
+        document.getElementById('reservationModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('reservationModal').classList.add('hidden');
+    }
+</script>
+
+</body>
+</html>
