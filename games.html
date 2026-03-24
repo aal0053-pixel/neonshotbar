@@ -9,50 +9,88 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-
     <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center glass-nav">
-        <div class="text-3xl font-display neon-text">Neon RESTAUBAR</div>
-
-        <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest">
-            <a href="index.html">Home</a>
-            <a href="atmosphere.html">Atmosphere</a>
-            <a href="games.html">Games</a>
-            <a href="menu.html">Menu</a>
-            <button onclick="openModal('General')" class="neon-border px-6 py-2 rounded-full">
+        <div class="text-3xl font-display tracking-tighter neon-text">Neon RESTAUBAR</div>
+        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.4em] font-semibold">
+            <a href="index.html" class="hover:text-green-400 transition-colors">Home</a>
+            <a href="atmosphere.html" class="hover:text-green-400 transition-colors">Atmosphere</a>
+            <a href="games.html" class="hover:text-green-400 transition-colors">Games</a>
+            <a href="menu.html" class="hover:text-green-400 transition-colors">Menu</a>
+            <button onclick="openModal('General')"
+                class="neon-border px-6 py-2 rounded-full hover:bg-green-500 hover:text-black transition-all">
                 Book Now
             </button>
         </div>
     </nav>
 
-    <section class="py-32 text-center">
-        <h2 class="text-5xl font-display uppercase">Game Room</h2>
+    <section class="py-32 px-8 md:px-24 bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-6xl md:text-8xl font-display uppercase leading-none mb-4">The <span
+                        class="text-green-400">Game Room</span></h2>
+                <p class="text-white/40 uppercase tracking-[0.3em] text-sm">Reserve your table for the ultimate night
+                </p>
+            </div>
 
-        <div class="mt-10 grid md:grid-cols-2 gap-10 px-8">
-            <button onclick="openModal('Billiard')" class="menu-card p-10">
-                Billiard Tables
-            </button>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="menu-card rounded-[3rem] overflow-hidden group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?auto=format&fit=crop&q=80&w=2070"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-10">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-4xl font-display uppercase">Billiard Tables</h3>
+                            <span class="font-mono text-green-400">$15 / HOUR</span>
+                        </div>
+                        <button onclick="openModal('Billiard')"
+                            class="inline-block w-full text-center py-4 neon-border rounded-full font-display uppercase hover:bg-green-500 hover:text-black transition-all">
+                            Reserve Billiard
+                        </button>
+                    </div>
+                </div>
 
-            <button onclick="openModal('Ping Pong')" class="menu-card p-10">
-                Ping Pong
-            </button>
+                <div class="menu-card rounded-[3rem] overflow-hidden group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&q=80&w=2099"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-10">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-4xl font-display uppercase">Ping Pong</h3>
+                            <span class="font-mono text-green-400">$10 / HOUR</span>
+                        </div>
+                        <button onclick="openModal('Ping Pong')"
+                            class="inline-block w-full text-center py-4 neon-border rounded-full font-display uppercase hover:bg-green-500 hover:text-black transition-all">
+                            Reserve Ping Pong
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div id="reservationModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center">
-        <div class="bg-zinc-900 p-10 rounded-3xl text-center">
-            <h2 class="text-3xl font-display">Reserve <span id="modalTitle"></span></h2>
-            <button onclick="closeModal()" class="mt-6 neon-border px-6 py-2">Close</button>
+    <div id="reservationModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+        <div class="bg-zinc-900 w-full max-w-xl rounded-[3rem] neon-border p-10 relative">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-white/40 hover:text-white">
+                <i data-lucide="x"></i>
+            </button>
+            <h2 class="text-4xl font-display uppercase mb-2">Secure Your <span class="text-green-400"
+                    id="modalTitle">Table</span></h2>
         </div>
     </div>
 
-    <footer class="py-20 text-center border-t border-white/10">
-        <p>© Neon Restaubar</p>
+    <footer class="py-20 px-8 border-t border-white/10 bg-zinc-950">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>© Neon Restaubar</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

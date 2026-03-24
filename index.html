@@ -4,47 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Restaubar</title>
+    <title>Neon Restaubar | Neon, Games & Vibes</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-
     <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center glass-nav">
-        <div class="text-3xl font-display neon-text">Neon RESTAUBAR</div>
-
-        <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest">
-            <a href="index.html">Home</a>
-            <a href="atmosphere.html">Atmosphere</a>
-            <a href="games.html">Games</a>
-            <a href="menu.html">Menu</a>
-            <button onclick="openModal('General')" class="neon-border px-6 py-2 rounded-full">
+        <div class="text-3xl font-display tracking-tighter neon-text">Neon RESTAUBAR</div>
+        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.4em] font-semibold">
+            <a href="index.html" class="hover:text-green-400 transition-colors">Home</a>
+            <a href="atmosphere.html" class="hover:text-green-400 transition-colors">Atmosphere</a>
+            <a href="games.html" class="hover:text-green-400 transition-colors">Games</a>
+            <a href="menu.html" class="hover:text-green-400 transition-colors">Menu</a>
+            <button onclick="openModal('General')"
+                class="neon-border px-6 py-2 rounded-full hover:bg-green-500 hover:text-black transition-all">
                 Book Now
             </button>
         </div>
     </nav>
 
-    <section class="h-screen flex items-center justify-center text-center">
-        <h1 class="text-[15vw] font-display uppercase">
-            Neon <span class="neon-text">Restaubar</span>
-        </h1>
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2070"
+            class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-[18vw] md:text-[12vw] font-display leading-[0.8] uppercase tracking-tighter mb-6">
+                Neon <br><span class="neon-text animate-neon">Restaubar</span>
+            </h1>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mt-12">
+                <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-white/60">
+                    <i data-lucide="map-pin" size="14" class="text-green-400"></i> Downtown, Neon District
+                </div>
+                <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-white/60">
+                    <i data-lucide="clock" size="14" class="text-green-400"></i> Open Daily 6PM - 2AM
+                </div>
+            </div>
+        </div>
     </section>
 
-    <div id="reservationModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center">
-        <div class="bg-zinc-900 p-10 rounded-3xl text-center">
-            <h2 class="text-3xl font-display">Reserve <span id="modalTitle"></span></h2>
-            <button onclick="closeModal()" class="mt-6 neon-border px-6 py-2">Close</button>
+    <div id="reservationModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+        <div class="bg-zinc-900 w-full max-w-xl rounded-[3rem] neon-border p-10 relative">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-white/40 hover:text-white">
+                <i data-lucide="x"></i>
+            </button>
+
+            <h2 class="text-4xl font-display uppercase mb-2">Secure Your <span class="text-green-400"
+                    id="modalTitle">Table</span></h2>
+            <p class="text-white/40 text-xs uppercase tracking-widest mb-8">Enter your details and we'll confirm your
+                spot.</p>
+
+            <form class="space-y-6"
+                onsubmit="event.preventDefault(); alert('Reservation Sent! We will contact you shortly.'); closeModal();">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-green-400">Full Name</label>
+                        <input type="text" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-green-400 transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-green-400">Phone Number</label>
+                        <input type="tel" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-green-400 transition-all">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-green-400">Date</label>
+                        <input type="date" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-green-400 transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest text-green-400">Time</label>
+                        <input type="time" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-green-400 transition-all">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-[10px] uppercase tracking-widest text-green-400">Number of Guests</label>
+                    <input type="number" min="1" max="20" required
+                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-green-400 transition-all">
+                </div>
+
+                <button type="submit"
+                    class="w-full py-4 bg-green-500 text-black font-display uppercase rounded-full hover:bg-green-400 transition-all mt-4">
+                    Confirm Reservation
+                </button>
+            </form>
         </div>
     </div>
 
-    <footer class="py-20 text-center border-t border-white/10">
-        <p>© Neon Restaubar</p>
+    <footer class="py-20 px-8 border-t border-white/10 bg-zinc-950">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>© Neon Restaubar</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

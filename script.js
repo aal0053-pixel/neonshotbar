@@ -8,3 +8,10 @@ function openModal(type) {
 function closeModal() {
     document.getElementById('reservationModal').classList.add('hidden');
 }
+
+window.onclick = function (event) {
+    let modal = document.getElementById('reservationModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+};
