@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Restaubar</title>
+    <title>Atmosphere | Neon Restaubar</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
@@ -30,11 +30,27 @@
         </div>
     </nav>
 
-    <section class="h-screen flex items-center justify-center text-center">
-        <h1 class="text-[15vw] font-display uppercase">
-            Neon <span class="neon-text">Restaubar</span>
-        </h1>
+    <section class="py-32 px-8 text-center">
+        <h2 class="text-5xl md:text-7xl font-display uppercase">Atmosphere</h2>
+        <p class="mt-6 text-white/60 max-w-2xl mx-auto">
+            Step into a neon world full of vibes, lights, and an energetic atmosphere.
+        </p>
     </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-8 pb-20">
+        <div class="h-[400px] rounded-3xl overflow-hidden neon-border">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=2157"
+                class="w-full h-full object-cover">
+        </div>
+        <div class="h-[400px] rounded-3xl overflow-hidden neon-border">
+            <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&q=80&w=2099"
+                class="w-full h-full object-cover">
+        </div>
+        <div class="h-[400px] rounded-3xl overflow-hidden neon-border">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2070"
+                class="w-full h-full object-cover">
+        </div>
+    </div>
 
     <div id="reservationModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center">
         <div class="bg-zinc-900 p-10 rounded-3xl text-center">
