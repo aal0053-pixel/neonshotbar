@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere | Neon Restaubar</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center glass-nav">
+        <div class="text-3xl font-display tracking-tighter neon-text">Neon RESTAUBAR</div>
+        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.4em] font-semibold">
+            <a href="index.html" class="hover:text-green-400 transition-colors">Home</a>
+            <a href="atmosphere.html" class="hover:text-green-400 transition-colors">Atmosphere</a>
+            <a href="games.html" class="hover:text-green-400 transition-colors">Games</a>
+            <a href="menu.html" class="hover:text-green-400 transition-colors">Menu</a>
+            <button onclick="openModal('General')"
+                class="neon-border px-6 py-2 rounded-full hover:bg-green-500 hover:text-black transition-all">
+                Book Now
+            </button>
+        </div>
+    </nav>
+
+    <section class="py-32 px-8 md:px-24 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div>
+                    <h2 class="text-6xl md:text-8xl font-display uppercase leading-none">The <br><span
+                            class="text-green-400">Atmosphere</span></h2>
+                </div>
+                <p class="max-w-xs text-white/40 uppercase tracking-widest text-xs leading-relaxed">
+                    Step into a world of electric energy. Our interior is designed to immerse you in a high-tech,
+                    low-life aesthetic.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="h-[500px] rounded-3xl overflow-hidden neon-border group">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=2157"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="grid grid-rows-2 gap-6 h-[500px]">
+                    <div class="rounded-3xl overflow-hidden neon-border group">
+                        <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&q=80&w=2099"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="rounded-3xl overflow-hidden neon-border group">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2070"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+                <div class="h-[500px] rounded-3xl overflow-hidden neon-border group">
+                    <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=1974"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="reservationModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+        <div class="bg-zinc-900 w-full max-w-xl rounded-[3rem] neon-border p-10 relative">
+            <button onclick="closeModal()" class="absolute top-8 right-8 text-white/40 hover:text-white">
+                <i data-lucide="x"></i>
+            </button>
+            <h2 class="text-4xl font-display uppercase mb-2">Secure Your <span class="text-green-400"
+                    id="modalTitle">Table</span></h2>
+        </div>
+    </div>
+
+    <footer class="py-20 px-8 border-t border-white/10 bg-zinc-950">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>© Neon Restaubar</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
